@@ -1,0 +1,76 @@
+ <!-- Product section-->
+ <section class="py-5">
+  <div class="container px-4 px-lg-5 my-5">
+      <div class="row gx-4 gx-lg-5 align-items-center">
+          <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{restBody.photograph}}" alt="..." /></div>
+          <div class="col-md-6 text-light">
+              <div class="small mb-1">ID: {{restBody.id}}</div>
+              <h1 class="display-5 fw-bolder">{{restBody.name}}</h1>
+              <div class="mb-3 fs-5">
+                <a href="update-restaurent/{{restBody.id}}">Update restaurent details</a> |
+                <a href="delete-restaurent/{{restBody.id}}">Delete restaurent details</a>
+              </div>
+
+
+              <div class="fs-5 mb-5">
+                  <span class="text-decoration">Near: {{restBody.neighborhood}}</span>
+              </div>
+                  <div class="fs-5 mb-5">
+                      <span class="text-decoration">Address: {{restBody.address}}</span>
+                  </div>
+                  <div class="fs-5 mb-5">
+
+                  <span class="text-decoration">Cusine: {{restBody.cuisine_type}}</span>
+                  </div>
+
+
+                  <!-- Button trigger modal -->
+<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Operating hours
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Operating hours</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <ul class="list-group">
+              <li class="list-group-item">Monday: {{restBody.operating_hours['Monday']}}</li>
+              <li class="list-group-item">Tuesday: {{restBody.operating_hours['Tuesday']}}</li>
+              <li class="list-group-item">Wednesday: {{restBody.operating_hours['Wednesday']}}</li>
+              <li class="list-group-item">Thursday: {{restBody.operating_hours['Thursday']}}</li>
+              <li class="list-group-item">Friday: {{restBody.operating_hours['Friday']}}</li>
+              <li class="list-group-item">Saturday: {{restBody.operating_hours['Saturday']}}</li>
+              <li class="list-group-item">Sunday: {{restBody.operating_hours['Sunday']}}</li>
+
+
+              
+
+            </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <p  class="mt-2">               
+<button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Review
+</button>    
+ </p>         
+ <div class="collapse" id="collapseExample">
+  <div class="card card-body bg-dark text-light">
+      <div class="mt-2" *ngFor="let item of restBody.reviews">
+          <h5> {{item['name']}} ( {{item['date']}} ) </h5>
+          <h6>Rating: {{item['rating']}}</h6>
+          <p>Comments: {{item['comments']}}</p>
+      </div>
+  </div>
+</div> 
+          </div>
+      </div>
+  </div>
+</section>

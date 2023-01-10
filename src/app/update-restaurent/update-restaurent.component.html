@@ -1,0 +1,64 @@
+<div class="container mt-3 mb-3  border boeder-light">
+    <form #updateRestForm="ngForm" (ngSubmit)="updateRestaurent(updateRestForm)">
+        <div class="row p-5">
+            <h3 class="text-light text-center">Update New Restaurent Details </h3>
+            <div class="col-md-6">
+                <div class="mb-2">
+                    <input name="id" [(ngModel)]="restBody.id" placeholder="Restaurent id" type="text" class="form-control">
+                </div>
+                <div>
+                    <div class="mb-2">
+                        <input name="neighborhood" [(ngModel)]="restBody.neighborhood" placeholder="Restaurent neighborhood" type="text" class="form-control">
+                    </div>
+                    <div class="mb-2">
+                        <input name="photograph" [(ngModel)]="restBody.photograph" placeholder="Restaurent image" type="text" class="form-control">
+                    </div>
+                    <div class="mb-2">
+                        <label class="text-light" for="">operating hours</label> <br>
+                                <input name="Monday" [(ngModel)]="restBody.operating_hours.Monday" placeholder="Monday" type="text" class="form-control mb-2">
+                                <input  name="Tuesday" [(ngModel)]="restBody.operating_hours.Tuesday"  placeholder="Tuesday" type="text" class="form-control  mb-2">
+                                <input name="Wednesday" [(ngModel)]="restBody.operating_hours.Wednesday"  placeholder="Wednesday" type="text" class="form-control  mb-2">
+                                <input name="Thursday" [(ngModel)]="restBody.operating_hours.Thursday"  placeholder="Thursday" type="text" class="form-control  mb-2">
+                                <input name="Friday" [(ngModel)]="restBody.operating_hours.Friday"   placeholder="Friday" type="text" class="form-control mb-2">
+                                <input name="Saturday" [(ngModel)]="restBody.operating_hours.Saturday"  placeholder="Saturday" type="text" class="form-control mb-2">
+                                <input  name="Sunday" [(ngModel)]="restBody.operating_hours.Sunday"   placeholder="Sunday" type="text" class="form-control mb-2">
+                             </div>
+                    
+                    </div>
+            </div>
+            <div class="col-md-6">
+
+                <div class="mb-2">
+                    <input name="name" [(ngModel)]="restBody.name" placeholder="Restaurent name" type="text" class="form-control">
+                </div>
+                <div class="mb-2">
+                    <input name="address" [(ngModel)]="restBody.address"  placeholder="Restaurent Address" type="text" class="form-control">
+                </div>
+                <div class="mb-2">
+                    <input name="cuisine_type" [(ngModel)]="restBody.cuisine_type"   placeholder="Restaurent cuisine type" type="text" class="form-control">
+                </div>
+                <div class="mb-2">
+                    <label class="text-light" for="">Reviews</label> <br>
+                    <div class="border  m-2 p-2" *ngFor="let review of restBody['reviews']">
+                        <input name="rvName" [(ngModel)]="review.name" placeholder="Name" type="text" class="form-control mb-2">
+                        <input name="date" [(ngModel)]="review.date"  placeholder="Date" type="text" class="form-control  mb-2">
+                        <input  name="rating" [(ngModel)]="review.rating"  placeholder="Rating" type="text" class="form-control  mb-2">
+                        <input name="comments" [(ngModel)]="review.comments"  placeholder="Comments" type="text" class="form-control  mb-2">
+
+                    </div>
+                         </div>
+
+                         <div class="mb-2">
+                            <label class="text-light mb-2" for="">Location</label> <br>
+                                    <input name="lat" [(ngModel)]="restBody.latlng.lat"  placeholder="Latitude" type="text" class="form-control mb-2">
+                                    <input name="lng" [(ngModel)]="restBody.latlng.lng"  placeholder="Longitude" type="text" class="form-control  mb-2">
+                                 </div>
+                                
+                            </div>
+                            <div class="text-center mt-3">
+                                <button type="submit"  class="btn btn-dark">Update details</button>
+                            </div>
+
+        </div>
+    </form>
+</div>

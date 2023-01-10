@@ -1,0 +1,61 @@
+<div class="container mt-3 mb-3  border boeder-light">
+    <form  (ngSubmit)="addRestaurent()">
+        <div class="row p-5">
+            <h3 class="text-light text-center">Add New Restaurent Details </h3>
+            <div class="col-md-6">
+                <div class="mb-2">
+                    <input name="id" [(ngModel)]="id" placeholder="Restaurent id" type="text" class="form-control">
+                </div>
+                <div>
+                    <div class="mb-2">
+                        <input name="neighborhood" [(ngModel)]="neighborhood" placeholder="Restaurent neighborhood" type="text" class="form-control">
+                    </div>
+                    <div class="mb-2">
+                        <input name="photograph" [(ngModel)]="photograph" placeholder="Restaurent image" type="text" class="form-control">
+                    </div>
+                    <div class="mb-2">
+                        <label class="text-light" for="">operating hours</label> <br>
+                                <input name="Monday" [(ngModel)]="Monday" placeholder="Monday" type="text" class="form-control mb-2">
+                                <input  name="Tuesday" [(ngModel)]="Tuesday"  placeholder="Tuesday" type="text" class="form-control  mb-2">
+                                <input name="Wednesday" [(ngModel)]="Wednesday"  placeholder="Wednesday" type="text" class="form-control  mb-2">
+                                <input name="Thursday" [(ngModel)]="Thursday"  placeholder="Thursday" type="text" class="form-control  mb-2">
+                                <input name="Friday" [(ngModel)]="Friday"   placeholder="Friday" type="text" class="form-control mb-2">
+                                <input name="Saturday" [(ngModel)]="Saturday"  placeholder="Saturday" type="text" class="form-control mb-2">
+                                <input  name="Sunday" [(ngModel)]="Sunday"   placeholder="Sunday" type="text" class="form-control mb-2">
+                             </div>
+                    
+                    </div>
+            </div>
+            <div class="col-md-6">
+
+                <div class="mb-2">
+                    <input name="rName" [(ngModel)]="rName" placeholder="Restaurent name" type="text" class="form-control">
+                </div>
+                <div class="mb-2">
+                    <input name="address" [(ngModel)]="address"  placeholder="Restaurent Address" type="text" class="form-control">
+                </div>
+                <div class="mb-2">
+                    <input name="cuisine_type" [(ngModel)]="cuisine_type"   placeholder="Restaurent cuisine type" type="text" class="form-control">
+                </div>
+                <div class="mb-2">
+                    <label class="text-light" for="">Reviews</label> <br>
+                            <input name="rvName" [(ngModel)]="rvName" placeholder="Name" type="text" class="form-control mb-2">
+                            <input name="date" [(ngModel)]="date"  placeholder="Date" type="text" class="form-control  mb-2">
+                            <input  name="rating" [(ngModel)]="rating"  placeholder="Rating" type="text" class="form-control  mb-2">
+                            <input name="comments" [(ngModel)]="comments"  placeholder="Comments" type="text" class="form-control  mb-2">
+                         </div>
+
+                         <div class="mb-2">
+                            <label class="text-light mb-2" for="">Location</label> <br>
+                                    <input name="lat" [(ngModel)]="lat"  placeholder="Latitude" type="text" class="form-control mb-2">
+                                    <input name="lng" [(ngModel)]="lng"  placeholder="Longitude" type="text" class="form-control  mb-2">
+                                 </div>
+                                
+                            </div>
+                            <div class="text-center mt-3">
+                                <button type="submit"  class="btn btn-dark">Add restaurent</button>
+                            </div>
+
+        </div>
+    </form>
+</div>
